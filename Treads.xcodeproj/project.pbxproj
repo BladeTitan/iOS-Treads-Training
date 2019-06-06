@@ -121,8 +121,8 @@
 			children = (
 				ED8DDE4A22A940C8000F4C0F /* LocationVC.swift */,
 				ED1DE2FE22A8F6B90079A464 /* RunVC.swift */,
-				ED1DE30022A8F6B90079A464 /* MyLogVC.swift */,
 				ED8DDE4822A93A8A000F4C0F /* OnRunVC.swift */,
+				ED1DE30022A8F6B90079A464 /* MyLogVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
