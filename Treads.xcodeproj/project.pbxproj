@@ -15,7 +15,8 @@
 		ED1DE30922A8F6BB0079A464 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1DE30722A8F6BB0079A464 /* LaunchScreen.storyboard */; };
 		ED8DDE4422A92093000F4C0F /* LogTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE4222A92093000F4C0F /* LogTBC.swift */; };
 		ED8DDE4522A92093000F4C0F /* LogTBC.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED8DDE4322A92093000F4C0F /* LogTBC.xib */; };
-		ED8DDE4922A93A8A000F4C0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE4822A93A8A000F4C0F /* ViewController.swift */; };
+		ED8DDE4922A93A8A000F4C0F /* OnRunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE4822A93A8A000F4C0F /* OnRunVC.swift */; };
+		ED8DDE4B22A940C8000F4C0F /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE4A22A940C8000F4C0F /* LocationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,8 @@
 		ED1DE30A22A8F6BB0079A464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED8DDE4222A92093000F4C0F /* LogTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTBC.swift; sourceTree = "<group>"; };
 		ED8DDE4322A92093000F4C0F /* LogTBC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogTBC.xib; sourceTree = "<group>"; };
-		ED8DDE4822A93A8A000F4C0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED8DDE4822A93A8A000F4C0F /* OnRunVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnRunVC.swift; sourceTree = "<group>"; };
+		ED8DDE4A22A940C8000F4C0F /* LocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +119,10 @@
 		ED1DE31522A91BD60079A464 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				ED8DDE4A22A940C8000F4C0F /* LocationVC.swift */,
 				ED1DE2FE22A8F6B90079A464 /* RunVC.swift */,
 				ED1DE30022A8F6B90079A464 /* MyLogVC.swift */,
-				ED8DDE4822A93A8A000F4C0F /* ViewController.swift */,
+				ED8DDE4822A93A8A000F4C0F /* OnRunVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -196,11 +199,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED8DDE4922A93A8A000F4C0F /* ViewController.swift in Sources */,
+				ED8DDE4922A93A8A000F4C0F /* OnRunVC.swift in Sources */,
 				ED1DE30122A8F6B90079A464 /* MyLogVC.swift in Sources */,
 				ED1DE2FD22A8F6B90079A464 /* AppDelegate.swift in Sources */,
 				ED8DDE4422A92093000F4C0F /* LogTBC.swift in Sources */,
 				ED1DE2FF22A8F6B90079A464 /* RunVC.swift in Sources */,
+				ED8DDE4B22A940C8000F4C0F /* LocationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

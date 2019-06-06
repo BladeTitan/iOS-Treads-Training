@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class RunVC: UIViewController {
+class RunVC: LocationVC {
     //***************************************************
     //MARK:- IBOutlets
     @IBOutlet weak var btnStart: UIButton!
@@ -20,16 +20,28 @@ class RunVC: UIViewController {
     //MARK:- Lifecycle Hook Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    //***************************************************
-    //MARK:- Button Methods
-    @IBAction func btnStartPressed(_ sender: Any) {
         
+        mapView.delegate = self
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        manager?.delegate = self
+        manager?.startUpdatingLocation()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        manager?.stopUpdatingLocation()
+    }
+    
+    //***************************************************
+    //MARK:- Button Methods
     @IBAction func btnCenterPressed(_ sender: Any) {
         
     }
 }
 
+extension RunVC: CLLocationManagerDelegate {
+    
+}

@@ -34,7 +34,6 @@
                                 <rect key="frame" x="171.5" y="704" width="71" height="71"/>
                                 <state key="normal" image="startRunningButton"/>
                                 <connections>
-                                    <action selector="btnStartPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="9FL-Lx-teh"/>
                                     <segue destination="C8I-e1-Vq9" kind="show" id="ksl-jC-J84"/>
                                 </connections>
                             </button>
