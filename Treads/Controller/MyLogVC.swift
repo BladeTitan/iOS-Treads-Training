@@ -9,10 +9,16 @@
 import UIKit
 
 class MyLogVC: UIViewController {
-
+    //***************************************************
+    //MARK:- IBOutlets
+    @IBOutlet weak var tableView: UITableView!
+    
+    //***************************************************
+    //MARK:- Lifecycle Hook Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        tableView.register(UINib(nibName: "LogTBC", bundle: nil), forCellReuseIdentifier: "logTBC")
     }
 
 
