@@ -108,7 +108,7 @@ class OnRunVC: LocationVC {
     
     func endRun() {
         manager?.stopUpdatingLocation()
-        //save run into DB
+        Run.addRunToRealm(pace: avgPace, distance: runDistance, duration: timeCounter)
     }
     
     @objc func updateLabels() {
