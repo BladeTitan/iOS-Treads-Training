@@ -54,6 +54,8 @@ class RunVC: LocationVC {
         paceLbl.text = lastRun.pace.formatTimeToString()
         distanceLbl.text = "\(lastRun.distance.metersToKilometers(decimalPlaces: 2)) km"
         durationLbl.text = lastRun.duration.formatTimeToString()
+        
+        
     }
     
     func hideLastRun() {

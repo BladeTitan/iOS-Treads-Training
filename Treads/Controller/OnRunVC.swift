@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import RealmSwift
 
 class OnRunVC: LocationVC {
     //***************************************************
@@ -21,14 +22,15 @@ class OnRunVC: LocationVC {
     
     //***************************************************
     //MARK:- Class Variables
-    var startLocation: CLLocation!
-    var lastLocation: CLLocation!
+    private var startLocation: CLLocation!
+    private var lastLocation: CLLocation!
+    private var locations = List<Location>()
     
-    var runDistance: Double = 0
-    var avgPace: Int = 0
-    var timer = Timer()
-    var paceTimer = Timer()
-    var timeCounter = 0
+    private var runDistance: Double = 0
+    private var avgPace: Int = 0
+    private var timer = Timer()
+    private var paceTimer = Timer()
+    private var timeCounter = 0
     
     //***************************************************
     //MARK:- Lifecycle Hook Methods
@@ -108,7 +110,7 @@ class OnRunVC: LocationVC {
     
     func endRun() {
         manager?.stopUpdatingLocation()
-        Run.addRunToRealm(pace: avgPace, distance: runDistance, duration: timeCounter)
+        Run.addRunToRealm(pace: avgPace, distance: runDistance, duration: timeCounter, locations: locations)
     }
     
     @objc func updateLabels() {
@@ -147,6 +149,8 @@ extension OnRunVC: CLLocationManagerDelegate {
             startLocation = locations.first
         } else if let location = locations.last {
             runDistance += lastLocation.distance(from: location)
+            let newLocation = Location(latitude: Double(lastLocation.coordinate.latitude), longitude: Double(lastLocation.coordinate.longitude))
+            self.locations.insert(newLocation, at: 0)
             distanceLbl.text = "\(runDistance.metersToKilometers(decimalPlaces: 2))"
         }
 

@@ -21,6 +21,8 @@
 		ED8DDE4D22AA2157000F4C0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE4C22AA2157000F4C0F /* Extensions.swift */; };
 		ED8DDE4F22AA3605000F4C0F /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE4E22AA3605000F4C0F /* Run.swift */; };
 		ED8DDE5122AA3A72000F4C0F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE5022AA3A72000F4C0F /* Constants.swift */; };
+		ED8DDE5322AA663F000F4C0F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE5222AA663F000F4C0F /* Location.swift */; };
+		ED8DDE5522AA6989000F4C0F /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE5422AA6989000F4C0F /* RealmConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		ED8DDE4C22AA2157000F4C0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ED8DDE4E22AA3605000F4C0F /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		ED8DDE5022AA3A72000F4C0F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ED8DDE5222AA663F000F4C0F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		ED8DDE5422AA6989000F4C0F /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				ED8DDE5022AA3A72000F4C0F /* Constants.swift */,
+				ED8DDE5422AA6989000F4C0F /* RealmConfig.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				ED8DDE4E22AA3605000F4C0F /* Run.swift */,
+				ED8DDE5222AA663F000F4C0F /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,11 +291,13 @@
 			files = (
 				ED8DDE4922A93A8A000F4C0F /* OnRunVC.swift in Sources */,
 				ED8DDE4F22AA3605000F4C0F /* Run.swift in Sources */,
+				ED8DDE5322AA663F000F4C0F /* Location.swift in Sources */,
 				ED1DE30122A8F6B90079A464 /* MyLogVC.swift in Sources */,
 				ED1DE2FD22A8F6B90079A464 /* AppDelegate.swift in Sources */,
 				ED8DDE4422A92093000F4C0F /* LogTBC.swift in Sources */,
 				ED1DE2FF22A8F6B90079A464 /* RunVC.swift in Sources */,
 				ED8DDE4B22A940C8000F4C0F /* LocationVC.swift in Sources */,
+				ED8DDE5522AA6989000F4C0F /* RealmConfig.swift in Sources */,
 				ED8DDE4D22AA2157000F4C0F /* Extensions.swift in Sources */,
 				ED8DDE5122AA3A72000F4C0F /* Constants.swift in Sources */,
 			);
