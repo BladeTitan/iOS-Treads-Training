@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="logTBC" rowHeight="86" id="KGk-i7-Jjw" customClass="LogTBC" customModule="Treads" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="logTBC" rowHeight="86" id="KGk-i7-Jjw" customClass="LogTBC" customModule="Treads" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -20,39 +20,39 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/1970" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyD-HP-Nz3">
-                        <rect key="frame" x="246.5" y="36" width="49.5" height="14"/>
-                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
+                        <rect key="frame" x="227" y="33" width="69" height="19.5"/>
+                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="OwE-yS-BVZ">
-                        <rect key="frame" x="137" y="24.5" width="46" height="36.5"/>
+                        <rect key="frame" x="131" y="18" width="58.5" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:08" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYn-oE-gJl">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
+                                <rect key="frame" x="0.0" y="0.0" width="58.5" height="38.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJT-Re-I6i">
-                                <rect key="frame" x="14.5" y="22.5" width="17.5" height="14"/>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
+                                <rect key="frame" x="17" y="30.5" width="24" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="fXj-S5-aXZ">
-                        <rect key="frame" x="24" y="25" width="58.5" height="36"/>
+                        <rect key="frame" x="24" y="23.5" width="66" height="39"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUj-Xa-rYr">
-                                <rect key="frame" x="0.0" y="0.0" width="58.5" height="22"/>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
+                                <rect key="frame" x="0.0" y="0.0" width="66" height="25"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="lastBaseline" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ny9-4R-c4T">
-                                <rect key="frame" x="11.5" y="14" width="35.5" height="22"/>
+                                <rect key="frame" x="12.5" y="17" width="41" height="22"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRz-Ks-wbU">
                                         <rect key="frame" x="0.0" y="0.0" width="21" height="22"/>
@@ -61,8 +61,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FwX-Nk-qlt">
-                                        <rect key="frame" x="22" y="6" width="13.5" height="14"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
+                                        <rect key="frame" x="22" y="2" width="19" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -71,7 +71,7 @@
                         </subviews>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" white="1" alpha="0.3046072345890411" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" white="1" alpha="0.15132705479452055" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="OwE-yS-BVZ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="AMn-20-6gE"/>
                     <constraint firstItem="fXj-S5-aXZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BO7-q6-d5Z"/>
@@ -81,7 +81,14 @@
                     <constraint firstItem="OwE-yS-BVZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yyy-Yc-kg5"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLbl" destination="wyD-HP-Nz3" id="h2i-Mk-X7s"/>
+                <outlet property="distanceLbl" destination="DRz-Ks-wbU" id="DuY-X3-5qx"/>
+                <outlet property="paceLbl" destination="gYn-oE-gJl" id="VCi-3t-BXf"/>
+                <outlet property="timeLbl" destination="tUj-Xa-rYr" id="S1X-3V-ULv"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="155.35714285714286"/>
         </tableViewCell>
     </objects>

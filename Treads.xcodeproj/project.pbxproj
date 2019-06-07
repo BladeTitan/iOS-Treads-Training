@@ -20,6 +20,7 @@
 		ED8DDE4B22A940C8000F4C0F /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE4A22A940C8000F4C0F /* LocationVC.swift */; };
 		ED8DDE4D22AA2157000F4C0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE4C22AA2157000F4C0F /* Extensions.swift */; };
 		ED8DDE4F22AA3605000F4C0F /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE4E22AA3605000F4C0F /* Run.swift */; };
+		ED8DDE5122AA3A72000F4C0F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE5022AA3A72000F4C0F /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		ED8DDE4A22A940C8000F4C0F /* LocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
 		ED8DDE4C22AA2157000F4C0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ED8DDE4E22AA3605000F4C0F /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
+		ED8DDE5022AA3A72000F4C0F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		ED1DE31222A91BC20079A464 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				ED8DDE5022AA3A72000F4C0F /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				ED1DE2FF22A8F6B90079A464 /* RunVC.swift in Sources */,
 				ED8DDE4B22A940C8000F4C0F /* LocationVC.swift in Sources */,
 				ED8DDE4D22AA2157000F4C0F /* Extensions.swift in Sources */,
+				ED8DDE5122AA3A72000F4C0F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
