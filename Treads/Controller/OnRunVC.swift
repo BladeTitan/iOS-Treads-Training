@@ -22,7 +22,11 @@ class OnRunVC: LocationVC {
     //MARK:- Class Variables
     var startLocation: CLLocation!
     var lastLocation: CLLocation!
+    
     var runDistance: Double = 0
+    var timer = Timer()
+    var paceTimer = Timer()
+    var timeCounter = 0
     
     //***************************************************
     //MARK:- Lifecycle Hook Methods
@@ -39,6 +43,7 @@ class OnRunVC: LocationVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         manager?.startUpdatingLocation()
+        startTimer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -77,6 +82,29 @@ class OnRunVC: LocationVC {
                     sliderView.center.x = self.swipeBackgroundImg.center.x - minAdjust
                 }
             }
+        }
+    }
+    
+    func startTimer() {
+        timeLbl.text = "\(timeCounter.formatTimeToString())"
+        averagePaceLbl.text = "0:00"
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateLabels), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateLabels() {
+        updateTimeLbl()
+        updateAvgPaceLbl()
+    }
+    
+    func updateTimeLbl() {
+        timeCounter += 1
+        timeLbl.text = "\(timeCounter.formatTimeToString())"
+    }
+    
+    func updateAvgPaceLbl() {
+        if(runDistance > 0) {
+            let avgPace = Int(Double(timeCounter) / (runDistance/1000))
+            averagePaceLbl.text = "\(avgPace.formatTimeToString())"
         }
     }
 }
