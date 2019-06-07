@@ -246,6 +246,9 @@
                                     <constraint firstAttribute="width" secondItem="b7e-0P-Ygt" secondAttribute="height" multiplier="75:76" id="P7J-jv-RvK"/>
                                 </constraints>
                                 <state key="normal" image="pauseButton"/>
+                                <connections>
+                                    <action selector="pauseBtnPressed:" destination="C8I-e1-Vq9" eventType="touchUpInside" id="NQN-cS-uf7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="END RUN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHN-kL-N9U">
                                 <rect key="frame" x="163" y="771" width="88" height="26"/>
@@ -294,6 +297,7 @@
                     <connections>
                         <outlet property="averagePaceLbl" destination="S9K-Sq-9vV" id="QbU-ab-1ei"/>
                         <outlet property="distanceLbl" destination="gWU-vv-fda" id="tto-NC-eC4"/>
+                        <outlet property="pauseBtn" destination="b7e-0P-Ygt" id="MG4-v2-FaI"/>
                         <outlet property="sliderImg" destination="Aj8-M8-3XV" id="l1O-RX-LyR"/>
                         <outlet property="swipeBackgroundImg" destination="Hvj-RR-wKt" id="24c-zQ-T9i"/>
                         <outlet property="timeLbl" destination="1lH-9k-KtG" id="Jpg-GU-Psv"/>

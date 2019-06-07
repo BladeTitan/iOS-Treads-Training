@@ -17,6 +17,7 @@ class OnRunVC: LocationVC {
     @IBOutlet weak var distanceLbl: UILabel!
     @IBOutlet weak var swipeBackgroundImg: UIImageView!
     @IBOutlet weak var sliderImg: UIImageView!
+    @IBOutlet weak var pauseBtn: UIButton!
     
     //***************************************************
     //MARK:- Class Variables
@@ -24,6 +25,7 @@ class OnRunVC: LocationVC {
     var lastLocation: CLLocation!
     
     var runDistance: Double = 0
+    var avgPace: Int = 0
     var timer = Timer()
     var paceTimer = Timer()
     var timeCounter = 0
@@ -42,13 +44,12 @@ class OnRunVC: LocationVC {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        manager?.startUpdatingLocation()
-        startTimer()
+        startRun()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        manager?.stopUpdatingLocation()
+        endRun()
     }
     
     //***************************************************
@@ -66,7 +67,6 @@ class OnRunVC: LocationVC {
                 }
                 else if(sliderView.center.x >= swipeBackgroundImg.center.x + maxAdjust) {
                     sliderView.center.x = swipeBackgroundImg.center.x + maxAdjust
-                    
                     dismiss(animated: true, completion: nil)
                 }
                 else if(sliderView.center.x <= swipeBackgroundImg.center.x + minAdjust) {
@@ -87,8 +87,28 @@ class OnRunVC: LocationVC {
     
     func startTimer() {
         timeLbl.text = "\(timeCounter.formatTimeToString())"
-        averagePaceLbl.text = "0:00"
+        averagePaceLbl.text = "\(avgPace.formatTimeToString())"
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateLabels), userInfo: nil, repeats: true)
+    }
+    
+    func startRun() {
+        startTimer()
+        manager?.startUpdatingLocation()
+        pauseBtn.setImage(#imageLiteral(resourceName: "pauseButton"), for: UIControl.State.normal)
+    }
+    
+    func pauseRun() {
+        startLocation = nil
+        lastLocation = nil
+        
+        timer.invalidate()
+        manager?.stopUpdatingLocation()
+        pauseBtn.setImage(#imageLiteral(resourceName: "resumeButton"), for: UIControl.State.normal)
+    }
+    
+    func endRun() {
+        manager?.stopUpdatingLocation()
+        //save run into DB
     }
     
     @objc func updateLabels() {
@@ -103,8 +123,16 @@ class OnRunVC: LocationVC {
     
     func updateAvgPaceLbl() {
         if(runDistance > 0) {
-            let avgPace = Int(Double(timeCounter) / (runDistance/1000))
+            avgPace = Int(Double(timeCounter) / (runDistance/1000))
             averagePaceLbl.text = "\(avgPace.formatTimeToString())"
+        }
+    }
+    
+    @IBAction func pauseBtnPressed(_ sender: Any) {
+        if(timer.isValid) {
+            pauseRun()
+        } else {
+            startRun()
         }
     }
 }
