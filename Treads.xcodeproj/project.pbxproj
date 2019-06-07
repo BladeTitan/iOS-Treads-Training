@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A9932C7E297E2DEA589EC68 /* Pods_Treads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2235F7A16F9082267A32BBD /* Pods_Treads.framework */; };
 		ED1DE2FD22A8F6B90079A464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1DE2FC22A8F6B90079A464 /* AppDelegate.swift */; };
 		ED1DE2FF22A8F6B90079A464 /* RunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1DE2FE22A8F6B90079A464 /* RunVC.swift */; };
 		ED1DE30122A8F6B90079A464 /* MyLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1DE30022A8F6B90079A464 /* MyLogVC.swift */; };
@@ -18,9 +19,13 @@
 		ED8DDE4922A93A8A000F4C0F /* OnRunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE4822A93A8A000F4C0F /* OnRunVC.swift */; };
 		ED8DDE4B22A940C8000F4C0F /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE4A22A940C8000F4C0F /* LocationVC.swift */; };
 		ED8DDE4D22AA2157000F4C0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE4C22AA2157000F4C0F /* Extensions.swift */; };
+		ED8DDE4F22AA3605000F4C0F /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE4E22AA3605000F4C0F /* Run.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		86E747CD4689D9BC5D61A129 /* Pods-Treads.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Treads.release.xcconfig"; path = "Target Support Files/Pods-Treads/Pods-Treads.release.xcconfig"; sourceTree = "<group>"; };
+		C181AAE5CFF686889DFB33F1 /* Pods-Treads.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Treads.debug.xcconfig"; path = "Target Support Files/Pods-Treads/Pods-Treads.debug.xcconfig"; sourceTree = "<group>"; };
+		D2235F7A16F9082267A32BBD /* Pods_Treads.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Treads.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1DE2F922A8F6B90079A464 /* Treads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Treads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1DE2FC22A8F6B90079A464 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED1DE2FE22A8F6B90079A464 /* RunVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunVC.swift; sourceTree = "<group>"; };
@@ -34,6 +39,7 @@
 		ED8DDE4822A93A8A000F4C0F /* OnRunVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnRunVC.swift; sourceTree = "<group>"; };
 		ED8DDE4A22A940C8000F4C0F /* LocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
 		ED8DDE4C22AA2157000F4C0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ED8DDE4E22AA3605000F4C0F /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9932C7E297E2DEA589EC68 /* Pods_Treads.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		579E2F22E81920D980810953 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2235F7A16F9082267A32BBD /* Pods_Treads.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CAE0C12F837F15073D8B15BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C181AAE5CFF686889DFB33F1 /* Pods-Treads.debug.xcconfig */,
+				86E747CD4689D9BC5D61A129 /* Pods-Treads.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ED1DE2F022A8F6B90079A464 = {
 			isa = PBXGroup;
 			children = (
 				ED1DE2FB22A8F6B90079A464 /* Treads */,
 				ED1DE2FA22A8F6B90079A464 /* Products */,
+				CAE0C12F837F15073D8B15BF /* Pods */,
+				579E2F22E81920D980810953 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +132,7 @@
 		ED1DE31322A91BCA0079A464 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ED8DDE4E22AA3605000F4C0F /* Run.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,9 +164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED1DE30D22A8F6BB0079A464 /* Build configuration list for PBXNativeTarget "Treads" */;
 			buildPhases = (
+				CC53C17A026D8D0A50C5B85C /* [CP] Check Pods Manifest.lock */,
 				ED1DE2F522A8F6B90079A464 /* Sources */,
 				ED1DE2F622A8F6B90079A464 /* Frameworks */,
 				ED1DE2F722A8F6B90079A464 /* Resources */,
+				ECC90F642CEF53105F7F2CFE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,12 +226,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CC53C17A026D8D0A50C5B85C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Treads-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECC90F642CEF53105F7F2CFE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Treads/Pods-Treads-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Treads/Pods-Treads-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ED1DE2F522A8F6B90079A464 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ED8DDE4922A93A8A000F4C0F /* OnRunVC.swift in Sources */,
+				ED8DDE4F22AA3605000F4C0F /* Run.swift in Sources */,
 				ED1DE30122A8F6B90079A464 /* MyLogVC.swift in Sources */,
 				ED1DE2FD22A8F6B90079A464 /* AppDelegate.swift in Sources */,
 				ED8DDE4422A92093000F4C0F /* LogTBC.swift in Sources */,
@@ -352,6 +431,7 @@
 		};
 		ED1DE30E22A8F6BB0079A464 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C181AAE5CFF686889DFB33F1 /* Pods-Treads.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -370,6 +450,7 @@
 		};
 		ED1DE30F22A8F6BB0079A464 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86E747CD4689D9BC5D61A129 /* Pods-Treads.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -109,6 +109,8 @@ class OnRunVC: LocationVC {
     func endRun() {
         manager?.stopUpdatingLocation()
         //save run into DB
+        
+        
     }
     
     @objc func updateLabels() {
