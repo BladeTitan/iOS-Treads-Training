@@ -15,6 +15,12 @@ class RunVC: LocationVC {
     @IBOutlet weak var btnStart: UIButton!
     @IBOutlet weak var btnCenter: UIButton!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var paceLbl: UILabel!
+    @IBOutlet weak var distanceLbl: UILabel!
+    @IBOutlet weak var durationLbl: UILabel!
+    @IBOutlet weak var lastRunClosedBtn: UIButton!
+    @IBOutlet weak var lastRunStackView: UIStackView!
+    @IBOutlet weak var lastRunBackgroundView: UIView!
     
     //***************************************************
     //MARK:- Lifecycle Hook Methods
@@ -29,6 +35,7 @@ class RunVC: LocationVC {
     override func viewDidAppear(_ animated: Bool) {
         manager?.delegate = self
         manager?.startUpdatingLocation()
+        getLastRun()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -36,9 +43,39 @@ class RunVC: LocationVC {
     }
     
     //***************************************************
+    //MARK:- Methods
+    func getLastRun() {
+        guard let lastRun = Run.getAllRuns()?.first else {
+            hideLastRun()
+            return
+        }
+        
+        showLastRun()
+        paceLbl.text = lastRun.pace.formatTimeToString()
+        distanceLbl.text = "\(lastRun.distance.metersToKilometers(decimalPlaces: 2)) km"
+        durationLbl.text = lastRun.duration.formatTimeToString()
+    }
+    
+    func hideLastRun() {
+        lastRunClosedBtn.isHidden = true
+        lastRunBackgroundView.isHidden = true
+        lastRunClosedBtn.isHidden = true
+    }
+    
+    func showLastRun() {
+        lastRunClosedBtn.isHidden = false
+        lastRunBackgroundView.isHidden = false
+        lastRunClosedBtn.isHidden = false
+    }
+    
+    //***************************************************
     //MARK:- Button Methods
     @IBAction func btnCenterPressed(_ sender: Any) {
         
+    }
+    
+    @IBAction func lastRunClosedBtnPressed(_ sender: Any) {
+        hideLastRun()
     }
 }
 
