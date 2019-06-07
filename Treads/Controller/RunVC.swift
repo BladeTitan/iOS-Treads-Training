@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import RealmSwift
 
 class RunVC: LocationVC {
     //***************************************************
@@ -29,7 +30,6 @@ class RunVC: LocationVC {
         
         mapView.delegate = self
         mapView.showsUserLocation = true
-        mapView.userTrackingMode = .follow
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -49,6 +49,8 @@ class RunVC: LocationVC {
             }
             
             mapView.addOverlay(overlay)
+        } else {
+            centerMapUserLocation()
         }
     }
     
@@ -80,6 +82,10 @@ class RunVC: LocationVC {
             points.append(loc)
         }
         
+        mapView.userTrackingMode = .none
+        let region = centerMapRunLocation(locations: lastRun.locations)
+        mapView.setRegion(region, animated: true)
+        
         return MKPolyline(coordinates: points, count: points.count)
     }
     
@@ -95,13 +101,44 @@ class RunVC: LocationVC {
         lastRunClosedBtn.isHidden = false
     }
     
+    func centerMapUserLocation() {
+        mapView.userTrackingMode = .follow
+        let coordinateRegion = MKCoordinateRegion(center: mapView.userLocation.coordinate, latitudinalMeters: 800, longitudinalMeters: 800)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    func centerMapRunLocation(locations: List<Location>) -> MKCoordinateRegion {
+        guard let initialLoc = locations.first else {
+            return MKCoordinateRegion()
+        }
+        
+        var minLat = initialLoc.latitude
+        var minLong = initialLoc.longitude
+        
+        var maxLat = minLat
+        var maxLong = minLong
+        
+        for location in locations {
+            minLat = min(minLat, location.latitude)
+            minLong = min(minLong, location.longitude)
+            maxLat = max(maxLat, location.latitude)
+            maxLong = max(maxLong, location.longitude)
+        }
+        
+        let latDelta = (maxLat - minLat) * 1.2
+        let longDelta = (maxLong - minLong) * 1.2
+        
+        return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: (maxLat+minLat)/2, longitude: (maxLong+minLong)/2), span: MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: longDelta))
+    }
+    
     //***************************************************
     //MARK:- Button Methods
     @IBAction func btnCenterPressed(_ sender: Any) {
-        
+        centerMapUserLocation()
     }
     
     @IBAction func lastRunClosedBtnPressed(_ sender: Any) {
+        centerMapUserLocation()
         hideLastRun()
     }
 }
