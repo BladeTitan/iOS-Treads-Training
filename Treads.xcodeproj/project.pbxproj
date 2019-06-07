@@ -17,6 +17,7 @@
 		ED8DDE4522A92093000F4C0F /* LogTBC.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED8DDE4322A92093000F4C0F /* LogTBC.xib */; };
 		ED8DDE4922A93A8A000F4C0F /* OnRunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE4822A93A8A000F4C0F /* OnRunVC.swift */; };
 		ED8DDE4B22A940C8000F4C0F /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE4A22A940C8000F4C0F /* LocationVC.swift */; };
+		ED8DDE4D22AA2157000F4C0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DDE4C22AA2157000F4C0F /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		ED8DDE4322A92093000F4C0F /* LogTBC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogTBC.xib; sourceTree = "<group>"; };
 		ED8DDE4822A93A8A000F4C0F /* OnRunVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnRunVC.swift; sourceTree = "<group>"; };
 		ED8DDE4A22A940C8000F4C0F /* LocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
+		ED8DDE4C22AA2157000F4C0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		ED1DE31122A91BBA0079A464 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				ED8DDE4C22AA2157000F4C0F /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				ED8DDE4422A92093000F4C0F /* LogTBC.swift in Sources */,
 				ED1DE2FF22A8F6B90079A464 /* RunVC.swift in Sources */,
 				ED8DDE4B22A940C8000F4C0F /* LocationVC.swift in Sources */,
+				ED8DDE4D22AA2157000F4C0F /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

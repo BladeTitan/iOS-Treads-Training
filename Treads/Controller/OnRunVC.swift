@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class OnRunVC: LocationVC {
     //***************************************************
@@ -18,6 +19,12 @@ class OnRunVC: LocationVC {
     @IBOutlet weak var sliderImg: UIImageView!
     
     //***************************************************
+    //MARK:- Class Variables
+    var startLocation: CLLocation!
+    var lastLocation: CLLocation!
+    var runDistance: Double = 0
+    
+    //***************************************************
     //MARK:- Lifecycle Hook Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +33,21 @@ class OnRunVC: LocationVC {
         sliderImg.addGestureRecognizer(swipeGesture)
         sliderImg.isUserInteractionEnabled = true
         swipeGesture.delegate = self
+        manager?.delegate = self
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        manager?.startUpdatingLocation()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        manager?.stopUpdatingLocation()
+    }
+    
+    //***************************************************
+    //MARK:- Methods
     @objc func endRunSwiped(sender: UIPanGestureRecognizer) {
         let minAdjust: CGFloat = 78
         let maxAdjust: CGFloat = 132.5
@@ -63,4 +83,17 @@ class OnRunVC: LocationVC {
 
 extension OnRunVC: UIGestureRecognizerDelegate {
     
+}
+
+extension OnRunVC: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if (startLocation == nil) {
+            startLocation = locations.first
+        } else if let location = locations.last {
+            runDistance += lastLocation.distance(from: location)
+            distanceLbl.text = "\(runDistance.metersToKilometers(decimalPlaces: 2))"
+        }
+
+        lastLocation = locations.last
+    }
 }
