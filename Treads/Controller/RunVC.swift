@@ -42,6 +42,16 @@ class RunVC: LocationVC {
         manager?.stopUpdatingLocation()
     }
     
+    func setupMapViews() {
+        if let overlay = addLastRunToMap() {
+            if(mapView.overlays.count > 0) {
+                mapView.removeOverlays(mapView.overlays)
+            }
+            
+            mapView.addOverlay(overlay)
+        }
+    }
+    
     //***************************************************
     //MARK:- Methods
     func getLastRun() {
@@ -51,11 +61,26 @@ class RunVC: LocationVC {
         }
         
         showLastRun()
+        setupMapViews()
+        
         paceLbl.text = lastRun.pace.formatTimeToString()
         distanceLbl.text = "\(lastRun.distance.metersToKilometers(decimalPlaces: 2)) km"
         durationLbl.text = lastRun.duration.formatTimeToString()
+    }
+    
+    func addLastRunToMap() -> MKPolyline? {
+        guard let lastRun = Run.getAllRuns()?.first else {
+            return nil
+        }
         
+        var points = [CLLocationCoordinate2D]()
         
+        for point in lastRun.locations {
+            let loc = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
+            points.append(loc)
+        }
+        
+        return MKPolyline(coordinates: points, count: points.count)
     }
     
     func hideLastRun() {
@@ -82,5 +107,11 @@ class RunVC: LocationVC {
 }
 
 extension RunVC: CLLocationManagerDelegate {
-    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let polyline = overlay as! MKPolyline
+        let renderer = MKPolylineRenderer(polyline: polyline)
+        renderer.strokeColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
+        renderer.lineWidth = 4
+        return renderer
+    }
 }
